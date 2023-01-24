@@ -12,8 +12,8 @@ import java.io.InputStreamReader;
 public class Seminar1_DZ {
     public static void main(String[] args) throws IOException {
         int num = enterInt();
-        System.out.println(num);
-        System.out.println(triangleNum(num));
+        int t = triangleNum(num);
+        System.out.printf("%d -е треугольное число равно %d", num, t);
     }
 
     // Ввод числа с консоли
