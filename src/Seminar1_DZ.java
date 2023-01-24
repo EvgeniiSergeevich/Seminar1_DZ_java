@@ -25,6 +25,7 @@ public class Seminar1_DZ {
         return Integer.parseInt(num);
     }
 
+    // Вычисляю треугольное число
     static int triangleNum(int num)
     {
         return num * (num + 1) / 2;
