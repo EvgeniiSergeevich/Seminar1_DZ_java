@@ -19,10 +19,44 @@ public class Seminar1_DZ {
     // Ввод числа с консоли
     static int enterInt() throws IOException
     {
-        System.out.println("Введите целое число: ");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String num = reader.readLine();
-        return Integer.parseInt(num);
+        int number = 0;
+        System.out.println("Введите целое положительное число: ");
+        boolean flag = true;
+        while (flag)
+        {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            String num = reader.readLine();
+            try
+            {
+                Integer.parseInt(num);
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Введите целое число!");
+                flag = true;
+                continue;
+            }
+
+            if(num.length() == 0)
+            {
+                System.out.println("Вы ничего не ввели! Попробуйте снова!");
+                flag = true;
+
+            }
+            else if (Integer.parseInt(num) < 0)
+            {
+                System.out.println("Число должно быть положительным!");
+                flag = true;
+            }
+            else
+            {
+                number = Integer.parseInt(num);
+                flag = false;
+            }
+        }
+
+        return number;
+
     }
 
     // Вычисляю треугольное число
